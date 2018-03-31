@@ -1,0 +1,156 @@
+<!DOCTYPE HTML>
+
+	<head>
+		<title>The Final Antidote</title>
+	</head>
+
+	<style>
+		body {
+			margin: 100px;
+			background-color: #BB3E3A;
+			color: white;
+			padding-left: 100px;
+			padding-right: 100px;
+			padding-top: 50px;
+			padding-bottom: 50px;
+			border: 10px dashed black;
+		}
+
+		.button5 {
+    background-color: white;
+    color: black;
+    border: 2px solid #555555;
+}
+
+.button5:hover {
+    background-color: #555555;
+    color: white;
+}
+
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+		h1 {
+
+   -webkit-text-stroke-width: 2px;
+   -webkit-text-stroke-color: black;
+
+		}
+
+		img {
+			width: 65%;
+		}
+	</style>
+
+<script>
+currentQuestion = 0;
+currentChoice = "a";
+function myFunction1() {
+    currentChoice = "a";
+    newMessage();
+}
+function myFunction2() {
+    currentChoice = "b";
+    newMessage();
+}
+function myFunction3() {
+    currentChoice = "c";
+    newMessage();
+}    
+
+function newMessage(){
+
+	 message = "";
+	 newQuestion = 0;
+
+	if (currentQuestion == 0){
+		if (currentChoice == "a"){
+			message = "You turn on the TV when you get home, and see this message: BREAKING NEWS: AN OUTBREAK IN THE CITY LED TO THE POPULATION TURNING INTO ZOMBIES. THE CAUSE OF THE OUTBREAK IS UNKNOWN.”  When you wake up,  you see nine zombies standing right next to your bed. You need an antidote, and quick! Which of the options do you think is the antidote to zombie fever?<br><br>Option a: Candy <br><br>Option b: Potatoes <br><br>Option c: Sugar<br><br>";
+			newQuestion = 2;
+		}
+		if (currentChoice == "b"){
+			message = "You go to the nurse and tell her about how everybody is sick. The nurse tells all the infected students to go home because of the “flu”. The nurse asks you to help her find the right ingredient to cure all the students. She says “I feel like it isn’t Sugar. What do you think? <br><br>Option a: Candy <br><br>Option b: Potatoes <br><br>Option c: Sugar<br><br>";
+				currentQuestion = 0;
+				newQuestion = 1;
+
+		}
+		if (currentChoice == "c"){
+			message = "Your classmates' flu has started getting to you. You lay your head down and fall asleep — when you wake up, you're green all over and your skin is falling off. You turned into a zombie! <h1 style='color:red;'>GAME OVER!</h1>";
+			document.getElementById("buttons").style.visibility='hidden';
+
+		}
+	}
+
+	else if (currentQuestion == 1){
+		if (currentChoice == "a"){
+			message = "You lose. Your anecdote made more  people turn into zombies, including you!  <h1 style='color:red;'>GAME OVER!</h1>";
+			document.getElementById("buttons").style.visibility='hidden';
+		}
+		if (currentChoice == "b"){
+			message = "Correct! You win! Your anecdote cured the world! No wonder your friend eating french fries didn't get sick! <br><br><img src='youWin.png'>";
+			document.getElementById("buttons").style.visibility='hidden';	
+
+		}
+		if (currentChoice == "c"){
+			message = "You lose. Your anecdote made more  people turn into zombies, including you!  <h1 style='color:red;'>GAME OVER!</h1>";
+			document.getElementById("buttons").style.visibility='hidden';
+
+		}
+	}
+
+		else if (currentQuestion == 2){
+		if (currentChoice == "a"){
+			message = "You became a zombie! <h1 style='color:red;'>GAME OVER!</h1>";
+			document.getElementById("buttons").style.visibility='hidden';
+		}
+		if (currentChoice == "b"){
+			message = "Correct! You win! Your anecdote cured the world! No wonder your friend eating french fries didn't get sick! <br><br><img src='youWin.png'>";
+			document.getElementById("buttons").style.visibility='hidden';	
+
+		}
+		if (currentChoice == "c"){
+			message = "“You became a zombie!” <h1 style='color:red;'>GAME OVER!</h1>";
+			document.getElementById("buttons").style.visibility='hidden';
+
+		}
+	}
+
+	document.getElementById("message").innerHTML = message;
+	currentQuestion = newQuestion;
+}
+</script>
+
+
+	<body>
+		<h1 style='font-size:50px;'>The Final Antidote</h1>
+		<div id="message">One day at school, I noticed that everybody was sick. Everyone was coughing, queasy and tired except for my best friend, who was just eating his french fries like normal. I thought that it was just the flu, but little did I know about the events that were about to unfold. 
+
+ <br><br>
+
+What should I do? 
+<br><br>
+
+Option a: Go home and forget about it <br><br>
+Option b: Warn the nurse about all the stick students <br><br>
+Option c: Stay in school and do nothing <br><br>
+</div>
+		<div id="buttons">
+		<button class="button button5" onclick="myFunction1()">Option a</button>
+		<button class="button button5" onclick="myFunction2()">Option b</button>
+		<button class="button button5" onclick="myFunction3()">Option c</button>
+		</div>
+	
+	</body>
+</html>
